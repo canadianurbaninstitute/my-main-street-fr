@@ -25,8 +25,8 @@
 	let message = "";
 
 	// info
-	let streetname = "Southern Ontario";
-	let place = "5,299 Main Streets";
+	let streetname = "Sud de l’Ontario";
+	let place = "5,299 Rues principales ";
 
 	// basic
 
@@ -302,7 +302,7 @@
 			marker: {
 				color: "#006501",
 			},
-			placeholder: "Enter your address",
+			placeholder: "Entrer votre adresse",
 			flyTo: {
 				padding: 15, // If you want some minimum space around your result
 				zoom: 14, // If you want your result not to go further than a specific zoom
@@ -470,8 +470,8 @@
 		document.getElementById("streetCatchmentLegend").style.display = "none";
 
 		// info
-		streetname = "Southern Ontario";
-		place = "5,299 Main Streets";
+		streetname = "Sud de l’Ontario";
+		place = "5,299 Rues principales ";
 
 		// basic
 
@@ -546,8 +546,8 @@
 
 
 		// info
-		streetname = "Southern Ontario";
-		place = "5,299 Main Streets";
+		streetname = "Sud de l’Ontario";
+		place = "5,299 Rues principales ";
 
 		// basic
 
@@ -651,7 +651,7 @@
 		<div class="legend">
 			<LegendItem
 				variant={"polygon"}
-				label={"Main Streets"}
+				label={"Rues principales "}
 				bgcolor={"#0134cb"}
 				bordercolor={"#0134cb"}
 			/>
@@ -665,7 +665,7 @@
 			</div>
 		</div>
 		<button id="downloadButton" on:click={generatePDF}>
-			Download Data
+			Télécharger les données
 		</button>
 		<hr />
 		<div id='metric-download'>
@@ -676,7 +676,7 @@
 				icon={"fluent:people-20-filled"}
 			/>
 			<Metric
-				label={"Employees"}
+				label={"Membres du personnel"}
 				value={employees}
 				icon={"mdi:briefcase"}
 			/>
@@ -685,36 +685,36 @@
 			<Metric
 				accordion
 				slot="header"
-				label={"Civic Infrastructure (On Street)"}
+				label={"Infrastructure municipale (sur rue)"}
 				value={civic}
 				icon={"heroicons:building-library-20-solid"}
 			/>
 			<div slot="body">
 				<div class="metric-container">
 					<Metric
-						label={"Education"}
+						label={"Scolaire"}
 						value={civic_education}
 						icon={"mdi:school"}
 					/>
 					<Metric
-						label={"Arts & Culture"}
+						label={"Arts et culture"}
 						value={civic_arts_culture}
 						icon={"fa6-solid:masks-theater"}
 					/>
 					<Metric
-						label={"Recreation"}
+						label={"Loisirs"}
 						value={civic_recreation}
 						icon={"material-symbols:park-rounded"}
 					/>
 				</div>
 				<div class="metric-container">
 					<Metric
-						label={"Government & Community Services"}
+						label={"Services gouvernementaux et communautaires"}
 						value={civic_govt_community}
 						icon={"mingcute:government-fill"}
 					/>
 					<Metric
-						label={"Health & Care Facilities"}
+						label={"Établissements de santé et de soins"}
 						value={civic_healthcare}
 						icon={"mdi:hospital-box"}
 					/>
@@ -725,18 +725,18 @@
 			<Metric
 				accordion
 				slot="header"
-				label={"Businesses (On Street)"}
+				label={"Commerces (sur rue)"}
 				value={business}
 				icon={"mdi:building"}
 			/>
 			<div slot="body" class="metric-container">
 				<Metric
-					label={"Retail"}
+					label={"Vente au détail"}
 					value={business_retail}
 					icon={"mdi:shopping"}
 				/>
 				<Metric
-					label={"Food & Drink"}
+					label={"Aliments/boissons"}
 					value={business_food_drink}
 					icon={"dashicons:food"}
 				/>
@@ -748,20 +748,20 @@
 			</div>
 		</Accordion>
 		<Metric
-			label={"Independent Business Index"}
+			label={"Indice d’indépendance de l’entreprise"}
 			value={independent_business}
 			icon={"mdi:shop"}
 		/>
-		<h6>Demographic</h6>
+		<h6>Démographie</h6>
 		<div class="metric-container">
 			<Metric
-				label={"Average Income"}
+				label={"Revenu moyen"}
 				prefix={"$"}
 				value={income.toLocaleString()}
 				icon={"mdi:wallet"}
 			/>
 			<Metric
-				label={"Bachelor's Degree"}
+				label={"Baccalauréat"}
 				value={education}
 				suffix={"%"}
 				icon={"mdi:school"}
@@ -771,15 +771,15 @@
 			<Metric
 				accordion
 				slot="header"
-				label={"Average Age"}
+				label={"Âge moyen"}
 				value={average_age}
 				icon={"mingcute:birthday-2-fill"}
 			/>
 			<div slot="body" class="metric-container">
-				<Metric label={"0 to 19"} value={age_0_19} suffix={"%"} />
-				<Metric label={"20 to 64"} value={age_20_64} suffix={"%"} />
+				<Metric label={"0 à 19 ans"} value={age_0_19} suffix={"%"} />
+				<Metric label={"20 à 64 ans"} value={age_20_64} suffix={"%"} />
 				<Metric
-					label={"65 and over"}
+					label={"65 ans et plus"}
 					value={age_over_65}
 					suffix={"%"}
 				/>
@@ -787,58 +787,58 @@
 		</Accordion>
 		<div class="metric-container">
 			<Metric
-				label={"Recent Immigrants"}
+				label={"Immigrants récents"}
 				value={immigrants}
 				suffix={"%"}
 				icon={"mdi:globe"}
 			/>
 			<Metric
-				label={"Visible Minorities"}
+				label={"Minorités visibles"}
 				value={visibleminority}
 				suffix={"%"}
 				icon={"material-symbols:handshake"}
 			/>
 			<Metric
-				label={"Indigenous Population"}
+				label={"Population autochtone"}
 				value={indigenous}
 				suffix={"%"}
 				icon={"mdi:person"}
 			/>
 		</div>
-		<h6>Commuting</h6>
+		<h6>Navettage</h6>
 		<div class="metric-container">
-			<Metric label={"Car"} value={car} suffix={"%"} icon={"mdi:car"} />
+			<Metric label={"Voiture"} value={car} suffix={"%"} icon={"mdi:car"} />
 			<Metric
-				label={"Public Transit"}
+				label={"Transports en commun"}
 				value={public_transit}
 				suffix={"%"}
 				icon={"mdi:bus"}
 			/>
 			<Metric
-				label={"Active Transit"}
+				label={"Transport actif"}
 				value={active_transit}
 				suffix={"%"}
 				icon={"mdi:bike"}
 			/>
 		</div>
-		<h6>Housing</h6>
+		<h6>Logement</h6>
 		<Accordion>
 			<Metric
 				accordion
 				slot="header"
-				label={"Dwellings"}
+				label={"Habitations"}
 				value={dwellings}
 				icon={"material-symbols:apartment"}
 			/>
 			<div slot="body">
 				<div class="metric-container">
 					<Metric
-						label={"Single Detached"}
+						label={"Habitations individuelles"}
 						value={singledetached}
 						suffix={"%"}
 					/>
 					<Metric
-						label={"Semi-Detached"}
+						label={"Habitations jumelées"}
 						value={semidetached}
 						suffix={"%"}
 					/>
@@ -846,12 +846,12 @@
 				</div>
 				<div class="metric-container">
 					<Metric
-						label={"Apartment (>5 stories)"}
+						label={"Appartement (>5 étages) "}
 						value={apartments_more_than_5}
 						suffix={"%"}
 					/>
 					<Metric
-						label={"Apartment (<5 stories)"}
+						label={"Appartement (<5 étages)"}
 						value={apartments_less_than_5}
 						suffix={"%"}
 					/>
@@ -860,7 +860,7 @@
 		</Accordion>
 		</div>
 		<hr />
-		<button id="resetButton" on:click={resetMap}> Reset Map </button>
+		<button id="resetButton" on:click={resetMap}> Réinitialiser la carte </button>
 	</div>
 	<div id="map" />
 </div>
