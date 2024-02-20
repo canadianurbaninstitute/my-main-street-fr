@@ -651,8 +651,8 @@
 			<LegendItem
 				variant={"polygon"}
 				label={"Rues principales "}
-				bgcolor={"#0134cb"}
-				bordercolor={"#0134cb"}
+				bgcolor={"#5E32BD"}
+				bordercolor={"#5E32BD"}
 			/>
 			<div id="streetCatchmentLegend">
 				<LegendItem
