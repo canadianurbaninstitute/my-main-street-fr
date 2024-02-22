@@ -22,6 +22,7 @@
 	let eligibility = "";
 	let eligibilitycolor = "";
 	let message = "";
+	let negative ="";
 
 	// info
 	let streetname = "Sud de l’Ontario";
@@ -366,13 +367,14 @@
 
 					if (nearestDistance < 0.1) {
 						handleMapClick(geojson);
-						eligibility = "eligible";
+						eligibility = "admissible";
+						negative = "";
 						eligibilitycolor = "#006501";
 						message =
-							"Please enter this information directly into your Expression of Interest application. You can use the download button to download a copy the data associated with the main street.";
+							"Veuillez saisir cette information directement dans votre demande de déclaration d’intérêt. Vous pouvez utiliser le bouton de téléchargement pour télécharger une copie des données associées à la rue principale.";
 					} else {
-						console.log("not eligible");
-						eligibility = "ineligible";
+						eligibility = "pas admissible";
+						negative = "n'";
 						eligibilitycolor = "#cb1515";
 						message = "";
 						removeFilters();
@@ -637,10 +639,10 @@
 	<div id="sidebar">
 		<div id="nearestStreetLabel">
 			<h5>
-				The nearest Main Street is {distance} metres away. This address is
+				La rue principale la plus proche est à {distance} mètre. Cette adresse {negative}est
 				<span style="color: {eligibilitycolor};">{eligibility}</span>
-				for the My Main Street Program. {message} For any questions, please
-				<a href="https://mymainstreet.ca/contact-us">contact us</a>.
+				au programme Ma rue principale. {message} Pour toute question, veuillez 
+				<a href="https://mymainstreet.ca/contact-us">nous contacter</a>.
 			</h5>
 			<hr />
 		</div>
