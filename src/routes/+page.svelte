@@ -371,7 +371,7 @@
 						negative = "";
 						eligibilitycolor = "#006501";
 						message =
-							"Veuillez saisir cette information directement dans votre demande de déclaration d’intérêt. Vous pouvez utiliser le bouton de téléchargement pour télécharger une copie des données associées à la rue principale.";
+							"Vous pouvez utiliser le bouton de téléchargement pour télécharger une copie des données associées à la rue principale.";
 					} else {
 						eligibility = "pas admissible";
 						negative = "n'";
