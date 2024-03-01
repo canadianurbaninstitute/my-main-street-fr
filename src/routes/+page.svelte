@@ -26,7 +26,7 @@
 
 	// info
 	let streetname = "Sud de l’Ontario";
-	let place = "2,822 Rues principales ";
+	let place = "5,299 Rues principales ";
 
 	// basic
 
@@ -284,7 +284,7 @@
 			container: "map",
 			style: "mapbox://styles/canadianurbaninstitute/clruxylvp00xl01qqhyy4661x?fresh=true",
 			center: [-79.1, 44.07],
-			zoom: 6.3,
+			zoom: 8,
 			minZoom: 2,
 			maxBounds: bounds,
 			scrollZoom: true,
@@ -461,7 +461,7 @@
 	function resetMap() {
 		map.flyTo({
 			center: [-79.1, 44.07],
-			zoom: 6.3,
+			zoom: 8,
 		});
 
 		geocoder.clear();
@@ -657,6 +657,12 @@
 				label={"Rues principales "}
 				bgcolor={"#5E32BD"}
 				bordercolor={"#5E32BD"}
+			/>
+			<LegendItem
+				variant={"polygon"}
+				label={"500m zone tampon"}
+				bgcolor={"#D4E3D4"}
+				bordercolor={"#D4E3D4"}
 			/>
 			<div id="streetCatchmentLegend">
 				<LegendItem
