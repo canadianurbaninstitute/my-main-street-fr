@@ -26,7 +26,7 @@
 
 	// info
 	let streetname = "Sud de l’Ontario";
-	let place = "5,299 Rues principales ";
+	let place = "Rues principales ";
 
 	// basic
 
@@ -479,7 +479,7 @@
 
 		// info
 		streetname = "Sud de l’Ontario";
-		place = "2,822 Rues principales ";
+		place = "Rues principales ";
 
 		// basic
 
@@ -555,7 +555,7 @@
 
 		// info
 		streetname = "Sud de l’Ontario";
-		place = "2,822 Rues principales ";
+		place = "Rues principales ";
 
 		// basic
 
