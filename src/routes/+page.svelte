@@ -374,13 +374,13 @@
 						handleMapClick(geojson);
 						eligibility = "admissible";
 						negative = "";
-						eligibilitycolor = "#006501";
+						// eligibilitycolor = "#006501";
 						message =
 							"Vous pouvez utiliser le bouton de téléchargement pour télécharger une copie des données associées à la rue principale.";
 					} else {
 						eligibility = "pas admissible";
 						negative = "n'";
-						eligibilitycolor = "#cb1515";
+						// eligibilitycolor = "#cb1515";
 						message = "";
 						removeFilters();
 					}
@@ -645,8 +645,7 @@
 		<div id="nearestStreetLabel">
 			<h5>
 				La rue principale la plus proche est à {distance} mètre. Cette adresse {negative}est
-				<span style="color: {eligibilitycolor};">{eligibility}</span>
-				au programme Ma rue principale. {message} Pour toute question, veuillez 
+				{eligibility} au programme Ma rue principale. {message} Pour toute question, veuillez 
 				<a href="https://mymainstreet.ca/contact-us">nous contacter</a>.
 			</h5>
 			<hr />
