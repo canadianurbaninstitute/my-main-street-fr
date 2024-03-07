@@ -208,10 +208,12 @@
 		// highlighting road
 
 		let feature;
+		let features = [];
 
 		streets.features.forEach((e) => {
 			if (e.properties.ROADSEGID === id) {
 				feature = e;
+				features.push(e);
 			}
 		});
 
@@ -224,9 +226,14 @@
 
 		let buffered = turf.buffer(feature, 1);
 
+		let selectedRoadData = {
+			type: "FeatureCollection",
+			features: features,
+		};
+
 		map.addSource("selectedRoad", {
 			type: "geojson",
-			data: feature,
+			data: selectedRoadData,
 		});
 
 		const geobbox = turf.bbox(buffered);
@@ -376,7 +383,7 @@
 						negative = "";
 						// eligibilitycolor = "#006501";
 						message =
-							"Vous pouvez utiliser le bouton de téléchargement pour télécharger une copie des données associées à la rue principale.";
+							"Vous pouvez aussi utiliser le bouton de téléchargement pour télécharger une copie des données associées à la rue principale.";
 					} else {
 						eligibility = "pas admissible";
 						negative = "n'";
