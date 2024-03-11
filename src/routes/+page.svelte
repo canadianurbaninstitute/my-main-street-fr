@@ -22,7 +22,6 @@
 	let eligibility = "";
 	let eligibilitycolor = "";
 	let message = "";
-	let negative ="";
 
 	// info
 	let streetname = "Sud de l’Ontario";
@@ -379,16 +378,14 @@
 
 					if (intersects) {
 						handleMapClick(geojson);
-						eligibility = "admissible";
-						negative = "";
+						eligibility = "se trouve bien";
 						// eligibilitycolor = "#006501";
 						message =
-							"Vous pouvez aussi utiliser le bouton de téléchargement pour télécharger une copie des données associées à la rue principale.";
+							"veuillez poursuivre la demande. Vous pouvez également utiliser le bouton de téléchargement pour télécharger une copie des données reliées à la rue principale";
 					} else {
-						eligibility = "pas admissible";
-						negative = "n'";
+						eligibility = "ne se trouve pas";
 						// eligibilitycolor = "#cb1515";
-						message = "";
+						message = "si vous pensez que votre adresse se trouve en fait sure une rue principale qui n'est pas recensée sur cette carte, veuillez envoyer un courriel à notre équipe";
 						removeFilters();
 					}
 				});
@@ -651,8 +648,8 @@
 	<div id="sidebar">
 		<div id="nearestStreetLabel">
 			<h5>
-				La rue principale la plus proche est à {distance} mètre. Cette adresse {negative}est
-				{eligibility} au programme Ma rue principale. {message} Pour toute question, veuillez 
+				La rue principale la plus proche est à {distance} mètre. Cette adresse
+				{eligibility} sur une rue principale recensée; {message}. Pour toute question, veuillez 
 				<a href="https://mymainstreet.ca/contact-us">nous contacter</a>.
 			</h5>
 			<hr />
